@@ -1,0 +1,41 @@
+//   Production Code For Containers Specifications
+// {
+//     "AWSEBDockerrunVersion": 2,
+//     "containerDefinitions": [
+//         {
+//             "name": "client",
+//             "image":"roopdock1/docker-client",
+//             "hostname":"client",
+//             "essential": false,
+//             "memory": 28
+//         },
+//         {
+//             "name": "nginx",
+//             "image":"roopdock1/docker-nginx",
+//             "hostname":"nginx",
+//             "essential": true,
+//             "portMappings": [
+//                 {
+//                     "hostPort":80,
+//                     "containerPort":80
+//                 }
+//             ],
+//             "links": ["client","server"],
+//             "memory": 28
+//         },
+//         {
+//             "name": "server",
+//             "image":"roopdock1/docker-server",
+//             "hostname":"api",
+//             "essential": false,
+//             "memory": 28
+//         },
+//         {
+//             "name": "worker",
+//             "image":"roopdock1/docker-worker",
+//             "hostname":"worker",
+//             "essential": false,
+//             "memory": 28
+//         }
+//     ]
+// }
