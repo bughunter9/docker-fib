@@ -11,14 +11,13 @@ after_success:
   - docker build -t roopdock1/docker-nginx ./nginx
   - docker build -t roopdock1/docker-server ./server
   - docker build -t roopdock1/docker-worker ./worker
-
-# Login to the Docker CLI through Travis
-- echo "$DOCK_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# Take these images and push them to docker-hub
-- docker push roopdock1/docker-client
-- docker push roopdock1/docker-nginx
-- docker push roopdock1/docker-server
-- docker push roopdock1/docker-worker
+  # Login to the Docker CLI through Travis
+  - echo "$DOCK_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take these images and push them to docker-hub
+  - docker push roopdock1/docker-client
+  - docker push roopdock1/docker-nginx
+  - docker push roopdock1/docker-server
+  - docker push roopdock1/docker-worker
 
 # travis configuration for deployment to AWS Beanstalk
 # deploy:
